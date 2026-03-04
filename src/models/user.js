@@ -18,6 +18,6 @@ userSchema.pre('save', function () {
   if (!this.username) {
     this.username = this.email;
   }
-}).toJSONSchema;
+});
 
 export const User = model('User', userSchema);
