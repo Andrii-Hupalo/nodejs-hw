@@ -9,6 +9,7 @@ import { errorHandler } from './middleware/errorHandler.js';
 import notesRouter from './routes/notesRoutes.js';
 import authRoutes from './routes/authRoutes.js';
 import { errors } from 'celebrate';
+import userRoutes from './routes/userRoutes.js';
 
 dotenv.config();
 
@@ -26,6 +27,7 @@ app.get('/', (req, res) => {
 
 app.use(authRoutes);
 app.use(notesRouter);
+app.use(userRoutes);
 
 app.use(errors());
 app.use(notFoundHandler);
